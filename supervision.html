@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Thomas O. Hancock, Senior Research Fellow at the University of Leeds. Psychologically grounded mathematical models of how people make choices: research, supervision, teaching and awards.">
+<meta property="og:title" content="Thomas O. Hancock">
+<meta property="og:description" content="Interdisciplinary behavioural modeller and mathematical psychologist, University of Leeds. Papers, talks, supervision and teaching.">
+<meta property="og:image" content="photo.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Thomas O. Hancock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout idea: a quiet research archive — header, four clickable totals, a filter bar, one long list colour-coded by output type. */
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --ink: #1b2330;
+  --muted: #5b6576;
+  --line: #dde1e8;
+  --accent: #1f5f8b;
+  --accent-soft: #e3eef6;
+  --pub: #2f7d4f;   --pub-soft: #e4f2e9;
+  --sub: #a15c00;   --sub-soft: #fbeedb;
+  --wip: #6a4c9c;   --wip-soft: #eee8f7;
+  --conf: #1f5f8b;  --conf-soft: #e3eef6;
+  --award: #8a6d00;
+  --key: #a8324a;   --key-soft: #f8e3e7;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12161d; --surface: #1a2029; --ink: #e6e9ee; --muted: #9aa4b2; --line: #2b3340;
+    --accent: #7db7e0; --accent-soft: #1d2f3e;
+    --pub: #74c795; --pub-soft: #18301f; --sub: #f0b35c; --sub-soft: #33260f;
+    --wip: #b9a2e6; --wip-soft: #2a2238; --conf: #7db7e0; --conf-soft: #1d2f3e; --award: #e8c75a; --key: #ec8fa2; --key-soft: #3a1d24;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12161d; --surface: #1a2029; --ink: #e6e9ee; --muted: #9aa4b2; --line: #2b3340;
+  --accent: #7db7e0; --accent-soft: #1d2f3e;
+  --pub: #74c795; --pub-soft: #18301f; --sub: #f0b35c; --sub-soft: #33260f;
+  --wip: #b9a2e6; --wip-soft: #2a2238; --conf: #7db7e0; --conf-soft: #1d2f3e; --award: #e8c75a; --key: #ec8fa2; --key-soft: #3a1d24;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body); }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+header.site { background: var(--surface); border-bottom: 1px solid var(--line); }
+.top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; padding: 28px 0 18px; }
+h1 { font: 600 34px/1.1 var(--display); margin: 0 0 6px; letter-spacing: -0.01em; text-wrap: balance; }
+.role { color: var(--muted); margin: 0; max-width: 62ch; }
+.foot { color: var(--muted); font-size: 13px; padding: 0 20px 32px; }
+.tphoto { margin: 4px 0 0; max-width: 360px; }
+.tphoto img { width: 100%; height: auto; border-radius: 8px; display: block; }
+.tphoto figcaption { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.toplinks { display: flex; gap: 14px; flex-wrap: wrap; font-size: 14px; }
+.proto { font-size: 12px; font-weight: 600; color: var(--sub); background: var(--sub-soft); padding: 2px 8px; border-radius: 999px; }
+nav.tabs { display: flex; gap: 22px; font-size: 14px; overflow-x: auto; }
+nav.tabs span { padding: 10px 0; color: var(--muted); white-space: nowrap; }
+nav.tabs span.on { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--accent); }
+nav.tabs a { padding: 10px 0; color: var(--muted); white-space: nowrap; text-decoration: none; }
+nav.tabs a:hover { color: var(--ink); }
+nav.tabs a.on { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--accent); }
+nav.tabs span.soon::after { content: " · soon"; font-size: 12px; }
+main { padding: 28px 20px 60px; display: grid; gap: 18px; }
+.intro { max-width: 70ch; margin: 0; color: var(--muted); }
+.totals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.tmain { all: unset; display: block; cursor: pointer; width: 100%; }
+.subs { margin-top: 4px; font-size: 12px; color: var(--muted); }
+.subs button { font: inherit; color: var(--k); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline dotted; text-underline-offset: 3px; }
+.subs button[aria-pressed="true"] { font-weight: 700; text-decoration-style: solid; }
+.total { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; cursor: pointer; font: inherit; color: inherit; border-top: 4px solid var(--k); }
+.total b { display: block; font: 600 28px/1.1 var(--display); font-variant-numeric: tabular-nums; }
+.total span { color: var(--muted); font-size: 13px; }
+.total[aria-pressed="true"] { background: var(--ks); border-color: var(--k); }
+.total:hover { border-color: var(--k); }
+.filters { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: grid; gap: 12px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: end; }
+.field { display: grid; gap: 4px; font-size: 12px; color: var(--muted); flex: 1 1 170px; min-width: 150px; }
+.field.search { flex: 3 1 280px; }
+.field.narrow { flex: 0 1 150px; min-width: 130px; }
+input[type=search], select { font: 14px var(--body); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; width: 100%; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { font: 13px var(--body); border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 999px; padding: 4px 10px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.chip small { color: inherit; opacity: .7; margin-left: 4px; }
+.check { display: flex; gap: 6px; align-items: center; font-size: 14px; white-space: nowrap; }
+.status { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
+.status button { font: inherit; color: var(--accent); background: none; border: 0; cursor: pointer; padding: 0; text-decoration: underline; }
+.active-filters { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 12px; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 2px 8px; }
+ol.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.item { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--k); border-radius: 8px; padding: 12px 14px 12px 14px; display: grid; gap: 4px; }
+.meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+.kind { font-weight: 600; color: var(--k); background: var(--ks); border-radius: 4px; padding: 1px 7px; text-transform: uppercase; letter-spacing: .04em; font-size: 11px; }
+.num { font-variant-numeric: tabular-nums; }
+.award { color: var(--award); font-weight: 600; }
+.title { font: 500 18px/1.3 var(--display); margin: 0; text-wrap: pretty; }
+.authors { font-size: 14px; }
+.authors button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline dotted var(--line); text-underline-offset: 3px; }
+.authors button:hover { color: var(--accent); }
+.authors .me { font-weight: 600; }
+.venue { font-size: 14px; color: var(--muted); }
+.venue i { color: var(--ink); }
+.links { display: flex; gap: 12px; flex-wrap: wrap; font-size: 13px; }
+.links button { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; }
+.related { margin: 4px 0 0; padding: 8px 10px; background: var(--bg); border-radius: 6px; font-size: 13px; display: grid; gap: 3px; }
+.kw { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.kwchip { font: 12px var(--body); color: var(--muted); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 1px 9px; cursor: pointer; }
+.kwchip:hover { color: var(--accent); border-color: var(--accent); }
+.kwchip[aria-pressed="true"] { color: var(--surface); background: var(--accent); border-color: var(--accent); }
+.oa { color: var(--pub) !important; font-weight: 600; }
+.vid { color: var(--key) !important; font-weight: 600; }
+.absbtn { font: 13px var(--body); color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; }
+.abstract { margin: 6px 0 0; padding: 10px 12px; background: var(--bg); border-radius: 6px; font-size: 14px; line-height: 1.6; max-width: 80ch; }
+.empty { padding: 30px; text-align: center; color: var(--muted); background: var(--surface); border: 1px dashed var(--line); border-radius: 10px; }
+[data-k="Published"] { --k: var(--pub); --ks: var(--pub-soft); }
+[data-k="Submitted"] { --k: var(--sub); --ks: var(--sub-soft); }
+[data-k="In progress"], [data-k="Seminar"] { --k: var(--wip); --ks: var(--wip-soft); }
+[data-f="Keynote"] { --k: var(--key); --ks: var(--key-soft); }
+[data-k="Conference"] { --k: var(--conf); --ks: var(--conf-soft); }
+@media (max-width: 640px) {
+  .totals { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .total b { font-size: 22px; }
+  h1 { font-size: 28px; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+.who{display:flex;gap:20px;align-items:center}
+.photo{flex:none;width:104px;height:104px;border-radius:50%;background:var(--line);color:var(--muted);display:grid;place-items:center;font:600 22px var(--display);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+@media (max-width:600px){.who{flex-direction:column;align-items:flex-start}.photo{width:84px;height:84px}}
+.bio{max-width:70ch;margin:.4rem 0 0;line-height:1.5}
+
+.cta{background:var(--accent-soft);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:16px 18px}
+.cta h2{font:600 22px/1.2 var(--display);margin:0 0 6px}.cta p{margin:0;max-width:75ch}
+.totals.sup{grid-template-columns:repeat(3,minmax(0,1fr))}
+.stat{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--k);border-radius:10px;padding:12px 14px}
+.stat b{display:block;font:600 28px/1.1 var(--display)}.stat span{color:var(--muted);font-size:13px}
+h2.sec{font:600 20px/1.2 var(--display);margin:10px 0 0}
+.people{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.person{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--k);border-radius:10px;padding:14px 16px;display:grid;gap:6px}
+.person[data-g="Current"],.person[data-g="External"]{--k:var(--pub);--ks:var(--pub-soft)}
+.person[data-g="Visiting"]{--k:var(--wip);--ks:var(--wip-soft)}
+.person[data-g="Completed"]{--k:var(--conf);--ks:var(--conf-soft)}
+.person h3{margin:0;font:600 18px/1.25 var(--display)}
+.thesis{margin:0;font-style:italic}
+.outs{margin:0;padding-left:18px;font-size:14px;display:grid;gap:3px}
+.src{color:var(--muted);font-size:13px}
+.note{margin:0;font-size:14px}
+.lbl{font-weight:600}
+.badge{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--award);border:1px solid var(--award);border-radius:4px;padding:0 6px;margin-right:4px}
+.more{font-size:14px;font-weight:500}
+.mscwrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table.msc{border-collapse:collapse;width:100%;font-size:14px}
+.msc th{text-align:left;font-size:12px;color:var(--muted);font-weight:600;padding:10px 14px;border-bottom:1px solid var(--line)}
+.msc td{padding:9px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.msc tr:last-child td{border-bottom:0}
+.msc .yr{font-variant-numeric:tabular-nums;color:var(--muted);width:4em}.msc .role{color:var(--muted);white-space:nowrap}
+.msc .mt{margin-top:2px}
+.grp{margin:6px 0 0;max-width:640px}.grp img{width:100%;height:auto;border-radius:10px;display:block}.grp figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+@media (max-width:640px){.totals.sup{grid-template-columns:1fr}.msc .role{white-space:normal}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="top">
+      <div class="who">
+        <div class="photo"><img src="photo.jpg" alt="Thomas O. Hancock" width="104" height="104"></div>
+        <div>
+        <h1>Thomas O. Hancock</h1>
+        <p class="role">Senior Research Fellow, Choice Modelling Centre &amp; Institute for Transport Studies, University of Leeds.</p>
+<p class="bio">I am an interdisciplinary behavioural modeller and mathematical psychologist. I build psychologically grounded mathematical models of how people make choices across a wide range of contexts, bringing together ideas from across disciplines to understand and predict behavioural change.</p>
+        </div>
+      </div>
+      <div class="toplinks">
+        <a href="https://environment.leeds.ac.uk/transport/staff/2634/dr-thomas-hancock">Leeds profile</a>
+        <a href="https://scholar.google.com/citations?user=clW6LSoAAAAJ&amp;hl=en">Google Scholar</a>
+        <a href="https://orcid.org/0000-0002-8922-0901">ORCID</a>
+        <a href="https://www.linkedin.com/in/t-o-hancock/">LinkedIn</a>
+        <span>T.O.Hancock@leeds.ac.uk</span>
+      </div>
+    </div>
+    <nav class="tabs" aria-label="Site sections"><a href="index.html">Research</a><a href="supervision.html" class="on" aria-current="page">Supervision</a><a href="teaching.html">Teaching</a><a href="awards.html">Awards</a></nav>
+  </div>
+</header>
+<main class="wrap"><section class="cta"><h2>Prospective students and collaborators</h2>
+<p>If you’re interested in a PhD, a research visit or working together on a project, I’d be glad to hear from you, especially where choice modelling meets psychology, behavioural change or new sources of data. Get in touch at <b>T.O.Hancock@leeds.ac.uk</b>.</p></section>
+<div class="totals sup"><div class="stat" data-k="Published"><b>10</b><span>PhD students<br><small>7 current · 3 completed</small></span></div>
+<div class="stat" data-k="Conference"><b>22</b><span>MSc dissertations<br><small>15 as lead supervisor</small></span></div>
+<div class="stat" data-k="Keynote"><b>1</b><span>Student award<br><small>Best poster, hEART 2025</small></span></div></div>
+<figure class="grp"><img src="img/students2026.jpg" alt="Thomas O. Hancock with PhD students Di Wu, Olivia Barnes and Lorenzo Muñoz Torrejon at ICMC 2026" loading="lazy"><figcaption>With Di, Olivia and Lorenzo at ICMC 2026</figcaption></figure>
+<h2 class="sec">Current PhD students</h2><ul class="people"><li class="person" data-g="Current"><div class="meta"><span class="kind">Current</span><span>Co-supervisor · Dec 2024 – present</span></div>
+<h3>Lorenzo Muñoz Torrejon</h3><p class="thesis">Developing new behavioural models at the intersection of econometrics and machine learning</p><ul class="outs"><li>Using machine learning metrics to provide deeper insights into the performance of choice models <span class="src">Submitted Sep 2026</span></li></ul><a class="more" href="index.html#coauthor=Lorenzo Muñoz Torrejon">Papers and talks with Lorenzo (5) →</a></li><li class="person" data-g="Current"><div class="meta"><span class="kind">Current</span><span>Co-supervisor · Nov 2024 – present</span></div>
+<h3>Di Wu</h3><p class="thesis">Dynamic choice modelling of residential mobility: life-course, intention–behaviour dynamics, and forward-looking behaviour</p><a class="more" href="index.html#coauthor=Di Wu">Papers and talks with Di (1) →</a></li><li class="person" data-g="Current"><div class="meta"><span class="kind">Current</span><span>Co-supervisor · Mar 2024 – present</span></div>
+<h3>Olivia Barnes</h3><p class="thesis">Investigating a typology of valence framing using choice modelling</p><ul class="outs"><li>Revisiting framing effects: integrating multiple valence frames in choice modelling <span class="src">Submitted Aug 2026</span></li><li>Steering the frame: using choice modelling to test framing effects in South African drink-driving campaign design <span class="src">Submitted Oct 2026</span></li></ul><a class="more" href="index.html#coauthor=Olivia Barnes">Papers and talks with Olivia (5) →</a></li><li class="person" data-g="Current"><div class="meta"><span class="kind">Current</span><span>Co-supervisor · Feb 2022 – present</span></div>
+<h3>Faza Bastarianto</h3><p class="thesis">An integrated framework of agent-based and activity-travel behaviour modelling: a case study from Greater Jakarta, Indonesia</p><ul class="outs"><li><a href="https://doi.org/10.1186/s12544-023-00590-5">Agent-based models in urban transportation: Review, challenges, and opportunities</a> <span class="src"><i>European Transport Research Review</i>, 2023</span></li><li><a href="https://www.sciencedirect.com/science/article/pii/S2213624X25001452">‘Mind the Gap’ — The impact of discrepancies between Google Maps API and reported travel data in the Global South</a> <span class="src"><i>Case Studies on Transport Policy</i>, 2025</span></li><li>Who commutes how in a megacity? Modelling complex travel behaviour in the Global South <span class="src">Submitted Oct 2025</span></li></ul><figure class="tphoto"><img src="img/iatbr2024-faza.jpg" alt="Faza Bastarianto and Thomas O. Hancock at IATBR 2024" loading="lazy"><figcaption>With Faza at IATBR 2024, Vienna</figcaption></figure><a class="more" href="index.html#coauthor=Faza Bastarianto">Papers and talks with Faza (7) →</a></li></ul><h2 class="sec">External PhD students</h2><ul class="people"><li class="person" data-g="External"><div class="meta"><span class="kind">Current</span><span>Co-supervisor · King’s College London · Jul 2025 – present</span></div>
+<h3>Liam Gabb</h3><p class="thesis">Meaningful dying in Alzheimer’s dementia: understanding priorities at the end of life for people with dementia</p><a class="more" href="index.html#coauthor=Liam Gabb">Papers and talks with Liam (1) →</a></li><li class="person" data-g="External"><div class="meta"><span class="kind">Current</span><span>Co-supervisor · King’s College London · Jul 2025 – present</span></div>
+<h3>Rachel Clapham</h3><p class="thesis">How can anticoagulant thromboprophylaxis be personalised to reduce the risk of venous thromboembolism?</p></li></ul><h2 class="sec">Visiting PhD students</h2><ul class="people"><li class="person" data-g="Visiting"><div class="meta"><span class="kind">Visiting</span><span>Co-supervisor · visiting PhD student · Nov 2025 – present</span></div>
+<h3>Bozhan Qin</h3><p class="thesis">Cumulative prospect theory-guided deep neural networks for travel behaviour analysis under uncertainty</p></li></ul><h2 class="sec">Completed</h2><ul class="people"><li class="person" data-g="Completed"><div class="meta"><span class="kind">Completed</span><span>Co-supervisor · Mar 2021 – Sep 2024</span></div>
+<h3>Yu Wang</h3><p class="thesis">Using multiple sources of data to understand the heterogeneous preferences of travellers for developing differentiated policies</p><ul class="outs"><li><a href="https://www.sciencedirect.com/science/article/pii/S0967070X2400009X">Influence of perceived risk on travel mode choice during Covid-19</a> <span class="src"><i>Transport Policy</i>, 2024</span></li><li><a href="https://www.sciencedirect.com/science/article/pii/S2214367X24002278">Investigating the changes in residential location and commute patterns during the pandemic using smart card data</a> <span class="src"><i>Travel Behaviour and Society</i>, 2025</span></li><li><a href="https://www.sciencedirect.com/science/article/pii/S0967070X25003324">Modelling residential relocation behaviour combining passive revealed preference data and stated preference survey data</a> <span class="src"><i>Transport Policy</i>, 2025</span></li><li><a href="https://www.sciencedirect.com/science/article/pii/S0965856425003878">Nudging urban travellers towards greener travel modes: A virtual reality experiment</a> <span class="src"><i>Transportation Research Part A: Policy and Practice</i>, 2026</span></li></ul><p class="note"><span class="badge">Award</span> Best poster, hEART 2025 (for the virtual reality nudging paper)</p><p class="note"><span class="lbl">Current position:</span> <a href="https://environment.leeds.ac.uk/transport/staff/12770/yu-wang">Postdoctoral researcher, Choice Modelling Centre, University of Leeds</a> (we continue to work together)</p><a class="more" href="index.html#coauthor=Yu Wang">Papers and talks with Yu (19) →</a></li><li class="person" data-g="Completed"><div class="meta"><span class="kind">Completed</span><span>Co-supervisor · visiting PhD student · Dec 2023 – Nov 2024</span></div>
+<h3>Shujing Zhang</h3><ul class="outs"><li><a href="https://www.sciencedirect.com/science/article/pii/S0965856425004409">Exploring taste heterogeneity and substitution patterns in dockless bike-sharing parking preferences</a> <span class="src"><i>Transportation Research Part A: Policy and Practice</i>, 2026</span></li></ul><a class="more" href="index.html#coauthor=Shujing Zhang">Papers and talks with Shujing (1) →</a></li><li class="person" data-g="Completed"><div class="meta"><span class="kind">Completed</span><span>Co-supervisor · visiting PhD student · Oct 2023 – Sep 2024</span></div>
+<h3>Xin Zhang</h3><ul class="outs"><li><a href="https://www.sciencedirect.com/science/article/pii/S0968090X2600080X">Coordination behaviour in travel mode choice: An experiment on autonomous vehicle services</a> <span class="src"><i>Transportation Research Part C: Emerging Technologies</i>, 2026</span></li></ul><a class="more" href="index.html#coauthor=Xin Zhang">Papers and talks with Xin (1) →</a></li></ul>
+<h2 class="sec">MSc dissertations</h2>
+<div class="mscwrap"><table class="msc"><thead><tr><th>Year</th><th>Student and dissertation</th><th>My role</th></tr></thead><tbody><tr><td class="yr">2026</td><td><b>Amber Maughan</b><div class="mt">Can we predict students’ behavioural change in relation to gambling?</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2026</td><td><b>Qi An</b><div class="mt">A moderated mediation model of time orientation, self-regulation and sleep health</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2026</td><td><b>Yulan Li</b><div class="mt">Associations between personality traits, lifestyle behaviours, and mental health outcomes in university students</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2026</td><td><b>Weronika Pogubilo</b><div class="mt">The relationship between financial stress and intrinsic and extrinsic academic motivation in university students</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2026</td><td><b>Pranav Ajith</b><div class="mt">The impact of travel and activity behaviour on university students’ health and wellbeing: a study at the University of Leeds</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2025</td><td><b>Yuefan Zhou</b><div class="mt">Cultural differences in graduate work location preferences: evidence from UK MSc students</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2025</td><td><b>Xiaohan Lin</b><div class="mt">Who will choose new modes: what is the impact of survey representativeness?</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2024</td><td><b>Xinyi Liang</b><div class="mt">Uncovering consumer preferences for food delivery service</div></td><td class="role">Second reader</td></tr><tr><td class="yr">2024</td><td><b>Yuehe Wang</b><div class="mt">Why do people quit cycling?</div></td><td class="role">Second reader</td></tr><tr><td class="yr">2024</td><td><b>Kaining Li</b><div class="mt">Regional variations in travel mode choice: a comparative study of bicycles and electric scooters in UK cities</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2024</td><td><b>Weiwei Jiang</b><div class="mt">Urban travel choices and green travel strategies: an empirical analysis using London and Leeds as case studies</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2024</td><td><b>Nina Zhong</b><div class="mt">The integration of eye-tracking data into choice models for VR data</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2023</td><td><b>Alice Moriamez</b><div class="mt">Modelling moral decisions in the context of self-driving cars</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2023</td><td><b>Mutondi Makhado</b><div class="mt">A review of gender differences in travel behaviour models</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2023</td><td><b>Tirtha Patel</b><div class="mt">Pedal power for a greener London: potential of active travel in decarbonising the first and last mile</div></td><td class="role">Second reader</td></tr><tr><td class="yr">2022</td><td><b>Hugo Irving</b><div class="mt">Autonomous vehicles and ethical decision-making: should the public decide?</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2022</td><td><b>Ru Ya</b><div class="mt">What factors drive people to choose certain modes of transport including existing and emerging ones in China?</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2022</td><td><b>Azam Ali</b><div class="mt">Modelling time use during the Covid-19 pandemic using econometric and machine learning algorithms</div></td><td class="role">Second reader</td></tr><tr><td class="yr">2021</td><td><b>David Meester</b><div class="mt">Decision field theory for understanding health economic choice behaviour: an application to a discrete choice experiment of tobacco preferences <span class=src>Later developed into a journal paper: <a href="https://doi.org/10.1002/hec.4685">Can decision field theory enhance our understanding of health-based choices? Evidence from risky health behaviors</a> <span class="src"><i>Health Economics</i>, 2023</span> · <a class="more" href="index.html#coauthor=David%20Meester">Papers and talks with David (5) →</a></span></div></td><td class="role">Second supervisor · University of Oxford</td></tr><tr><td class="yr">2021</td><td><b>Yutian Miao</b><div class="mt">A review of the use of gender differences in travel behaviour models</div></td><td class="role">Lead supervisor</td></tr><tr><td class="yr">2021</td><td><b>Fan Wang</b><div class="mt">Activity-based mode choice model: a case study from China</div></td><td class="role">Second reader</td></tr><tr><td class="yr">2020</td><td><b>Ching Lin</b><div class="mt">Putting gender in the picture of quantitative transport studies: gender differences in commute distance and mode choice in the modern Netherlands</div></td><td class="role">Second reader</td></tr></tbody></table></div></main>
+<footer class="foot wrap">Thomas O. Hancock · University of Leeds · Last updated November 2026</footer>
+</body>
+</html>
